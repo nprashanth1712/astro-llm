@@ -1,0 +1,73 @@
+openapi: 3.0.1
+info:
+  title: Vedic Astrology API
+  description: API for Vedic astrology calculations.
+  version: 'v3'
+servers:
+  - url: https://api.vedicastroapi.com/v3-json
+paths:
+  /dosha/mangal-dosh:
+    get:
+      operationId: checkMangalDosh
+      summary: Check Mangal Dosha for a given birth information.
+      parameters:
+        - name: dob
+          in: query
+          required: true
+          description: Date of birth (format: MM/DD/YYYY).
+          schema:
+            type: string
+        - name: tob
+          in: query
+          required: true
+          description: Time of birth (format: HH:mm).
+          schema:
+            type: string
+        - name: lat
+          in: query
+          required: true
+          description: Latitude of the birthplace.
+          schema:
+            type: number
+        - name: lon
+          in: query
+          required: true
+          description: Longitude of the birthplace.
+          schema:
+            type: number
+        - name: tz
+          in: query
+          required: true
+          description: Timezone offset (e.g., 5.5 for IST).
+          schema:
+            type: number
+        - name: api_key
+          in: dfa2b8e6-d4f5-584a-b08c-e0a1e0150047
+          required: true
+          description: Your API key for authenticatio.
+          schema:
+            type: string
+        - name: lang
+          in: query
+          required: true
+          description: Language preference (e.g., 'en' for English).
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MangalDoshResponse'
+components:
+  schemas:
+    MangalDoshResponse:
+      type: object
+      properties:
+        result:
+          type: string
+          description: The result of the Mangal Dosha check.
+        details:
+          type: string
+          description: Additional details or recommendations.
