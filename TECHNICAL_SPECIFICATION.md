@@ -117,7 +117,7 @@
 | **Framework**       | Flask         | 3.1.2   |
 | **Language**        | Python        | 3.x     |
 | **AI/LLM**          | OpenAI SDK    | 1.108.2 |
-| **LLM Model**       | GPT-4o-mini   | Latest  |
+| **LLM Model**       | GPT-5.1   | Latest  |
 | **CORS**            | Flask-CORS    | 6.0.1   |
 | **Server**          | Gunicorn      | 23.0.0  |
 | **Environment**     | python-dotenv | 1.1.1   |
